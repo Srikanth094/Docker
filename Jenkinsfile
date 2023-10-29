@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  tools {
-  dockerTool 'myDocker'
-    }
   stages {
       stage('Clone repository') {
         steps {
@@ -12,8 +9,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    def dockerbuildpath = '/var/jenkins_home/workspace/Docker_Build'
-                    sh "docker build -t my-https-image:latest -f ${dockerbuildpath} ."
+                    sh "docker build -t my-https-image:v1 ."
                 }
             }
         }
