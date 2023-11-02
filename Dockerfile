@@ -1,6 +1,6 @@
 FROM centos:latest
 RUN yum -y update && \
     yum -y install httpd && \
-    clean all
+    yum clean all
 EXPOSE 80
 CMD [ "httpd" "-D" "FOREGROUND" ]
