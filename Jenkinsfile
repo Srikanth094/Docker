@@ -15,8 +15,9 @@ pipeline {
                 script {
                     sh "docker build -t my-https-image:v1 ."
                     sh "docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD"
-                    sh "docker push "anantharamu094/Docker:my-https-image"
+                    sh "docker push anantharamu094/Docker:my-https-image"
                 }
             }
         }
     }
+}
