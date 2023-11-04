@@ -1,8 +1,8 @@
 pipeline {
   agent any
   environment {
-    DOCKER_HUB_USERNAME = credentials(anantharamu094)
-    DOCKER_HUB_PASSWORD = credentials(EMJY4p098_@@)
+    DOCKER_HUB_USERNAME = credentials('anantharamu094')
+    DOCKER_HUB_PASSWORD = credentials('EMJY4p098_@@')
   }
   stages {
       stage('Clone repository') {
@@ -15,7 +15,7 @@ pipeline {
                 script {
                     sh "docker build -t my-https-image:v1 ."
                     sh "docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD"
-                    sh "docker push anantharamu094/Docker:my-https-image"
+                    sh "docker push my-https-image:v1"
                 }
             }
         }
