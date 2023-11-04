@@ -1,8 +1,8 @@
 pipeline {
   agent any
   environment {
-    DOCKER_HUB_USERNAME = = credentials('anantharamu094')
-    DOCKER_HUB_PASSWORD = = credentials('EMJY4p098_@@')
+    DOCKER_HUB_USERNAME = credentials('anantharamu094')
+    DOCKER_HUB_PASSWORD = credentials('EMJY4p098_@@')
   }
   stages {
       stage('Clone repository') {
